@@ -1,4 +1,5 @@
 import requests
+import os
 from bs4 import BeautifulSoup
 
 
@@ -91,7 +92,7 @@ if __name__ == "__main__":
     #print(resp.text)
     binary_links, solve_links = get_links(resp)
 
-    base = "/home/solardebris/fitsec/ctf/binaryjiujitsu/"
+    base = os.getenv("CTF")
 
     for link in binary_links:
         file = link.split("/")[-1]
